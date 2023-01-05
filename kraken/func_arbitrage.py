@@ -56,4 +56,26 @@ def structure_arbitrage_pairs(pairs):
 
                             # determine triangular match
                             if counts_c_base == 2 and counts_c_quote == 2 and c_base != c_quote:
-                                print(a_pair_box, b_pair_box, c_pair_box)
+                                # combined = sorted(a_pair_box), sorted(
+                                #     b_pair_box), sorted(c_pair_box)
+
+                                combined = [a_base + '/' + a_quote, b_base +
+                                            "/" + b_quote, c_base + "/" + c_quote]
+                                unique_item = sorted(combined)
+
+                                if unique_item not in remove_duplicates_list:
+                                    match_dict = {
+                                        "a_base": a_base,
+                                        "b_base": b_base,
+                                        "c_base": c_base,
+                                        "a_quote": a_quote,
+                                        "b_quote": b_quote,
+                                        "c_quote": c_quote,
+                                        "a_pair": a_pair_box,
+                                        "b_pair": b_pair_box,
+                                        "c_pair": c_pair_box,
+                                        "unique_item": unique_item
+                                    }
+
+                                    triangular_pairs_list.append(match_dict)
+    print(triangular_pairs_list[:10])
