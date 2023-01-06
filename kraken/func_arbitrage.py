@@ -79,3 +79,4 @@ def structure_arbitrage_pairs(pairs):
 
                                     triangular_pairs_list.append(match_dict)
     print(triangular_pairs_list[:10])
+    print(len(triangular_pairs_list))
