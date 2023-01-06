@@ -1,3 +1,6 @@
+import requests
+
+
 def get_tradeable_pairs(pairs):
     tradeable_pairs = []
 
@@ -31,7 +34,7 @@ def structure_arbitrage_pairs(pairs):
             b_pair_box = [b_base, b_quote]
 
             # check pair b
-            if pair_b != pair_a:
+            if b_pair_box != a_pair_box:
                 if b_base in a_pair_box or b_quote in a_pair_box:
 
                     # get pair c
@@ -41,7 +44,7 @@ def structure_arbitrage_pairs(pairs):
                         c_pair_box = [c_base, c_quote]
 
                         # count number of matching c items
-                        if pair_c != pair_a and pair_c != pair_b:
+                        if c_pair_box != a_pair_box and c_pair_box != b_pair_box:
                             combine_all = [pair_a, pair_b, pair_c]
                             pair_box = [a_base, a_quote, b_base,
                                         b_quote, c_base, c_quote]
@@ -62,6 +65,10 @@ def structure_arbitrage_pairs(pairs):
                                 combined = [a_base + '/' + a_quote, b_base +
                                             "/" + b_quote, c_base + "/" + c_quote]
                                 unique_item = sorted(combined)
+                                # print(unique_item)
+
+                                # if unique_item == ['AAVE/ZEUR', 'AAVE/ZUSD', 'ZEUR/ZUSD']:
+                                #     print('match!')
 
                                 if unique_item not in remove_duplicates_list:
                                     match_dict = {
@@ -74,9 +81,33 @@ def structure_arbitrage_pairs(pairs):
                                         "a_pair": a_pair_box,
                                         "b_pair": b_pair_box,
                                         "c_pair": c_pair_box,
+                                        "a_altname": pair_a['altname'],
+                                        "b_altname": pair_b['altname'],
+                                        "c_altname": pair_c['altname'],
                                         "unique_item": unique_item
                                     }
 
                                     triangular_pairs_list.append(match_dict)
-    print(triangular_pairs_list[:10])
-    print(len(triangular_pairs_list))
+                                    remove_duplicates_list.append(unique_item)
+    return triangular_pairs_list
+
+
+def get_price_for_t_pair(t_pair):
+    # get order book for pair
+    a_altname = t_pair['a_altname']
+    b_altname = t_pair['b_altname']
+    c_altname = t_pair['c_altname']
+
+    a_resp = requests.get(
+        'https://api.kraken.com/0/public/Depth?pair={}'.format(a_altname)).json()
+    b_resp = requests.get(
+        'https://api.kraken.com/0/public/Depth?pair={}'.format(b_altname)).json()
+    c_resp = requests.get(
+        'https://api.kraken.com/0/public/Depth?pair={}'.format(c_altname)).json()
+
+    print(a_resp)
+    print(b_resp)
+    print(c_resp)
+
+    # extract pairs info
+    # pair_a =
