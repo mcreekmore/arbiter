@@ -110,17 +110,16 @@ def get_price_for_t_pair(t_pair):
 
     # print(a_resp)
     # print(b_resp)
-    # print(t_pair)
     # print(c_resp)
 
     # extract pairs info
     return {
-        "pair_a_ask": a_resp['result'][t_pair['a_pair_name']]['asks'][0],
-        "pair_a_bid": a_resp['result'][t_pair['a_pair_name']]['bids'][0],
-        "pair_b_ask": b_resp['result'][t_pair['b_pair_name']]['asks'][0],
-        "pair_b_bid": b_resp['result'][t_pair['b_pair_name']]['bids'][0],
-        "pair_c_ask": c_resp['result'][t_pair['c_pair_name']]['asks'][0],
-        "pair_c_bid": c_resp['result'][t_pair['c_pair_name']]['bids'][0],
+        "pair_a_ask": a_resp['result'][t_pair['a_pair_name']]['asks'],
+        "pair_a_bid": a_resp['result'][t_pair['a_pair_name']]['bids'],
+        "pair_b_ask": b_resp['result'][t_pair['b_pair_name']]['asks'],
+        "pair_b_bid": b_resp['result'][t_pair['b_pair_name']]['bids'],
+        "pair_c_ask": c_resp['result'][t_pair['c_pair_name']]['asks'],
+        "pair_c_bid": c_resp['result'][t_pair['c_pair_name']]['bids'],
     }
 
 
@@ -148,12 +147,12 @@ def calc_tri_arb_surface_rate(t_pair, prices):
     c_pair_name = t_pair['c_pair_name']
 
     # extract price info
-    a_ask = prices['pair_a_ask']
-    a_bid = prices['pair_a_bid']
-    b_ask = prices['pair_b_ask']
-    b_bid = prices['pair_b_bid']
-    c_ask = prices['pair_c_ask']
-    c_bid = prices['pair_c_bid']
+    a_ask = prices['pair_a_ask'][0]
+    a_bid = prices['pair_a_bid'][0]
+    b_ask = prices['pair_b_ask'][0]
+    b_bid = prices['pair_b_bid'][0]
+    c_ask = prices['pair_c_ask'][0]
+    c_bid = prices['pair_c_bid'][0]
 
     # set directions and loop through
     direction_list = ["forward", "reverse"]
@@ -442,3 +441,46 @@ def calc_tri_arb_surface_rate(t_pair, prices):
             return surface_dict
 
     return surface_dict
+
+
+def reformatted_orderbook(asks, bids, c_direction):
+    pass
+
+
+def get_depth_from_orderbook(surface_dict, prices):
+    """
+        CHALLENGES
+
+        full amount of available starting amount can be eaten at the first level (lvl 0)
+        some of the amount in can be eaten up by multiple levels
+        some coins may not have enough liquidity
+    """
+
+    # initial variables
+    # surface_dict = {
+    #     'swap_1': 'ADA',
+    #     'swap_2': 'XETH',
+    #     'swap_3': 'ZEUR',
+    #     'contract_1': 'ADAETH',
+    #     'contract_2': 'XETHZEUR',
+    #     'contract_3': 'ADAEUR',
+    #     'direction_trade_1': 'base_to_quote',
+    #     'direction_trade_2': 'base_to_quote',
+    #     'direction_trade_3': 'quote_to_base',
+    #     'starting_amount': 1,
+    #     'acquired_coin_t1': 4210.526315789473,
+    #     'acquired_coin_t2': 3.412980931675534,
+    #     'acquired_coin_t3': 1.0000477817330433,
+    #     'swap_1_rate': 4210.526315789473,
+    #     'swap_2_rate': 0.0008105829712729395,
+    #     'swap_3_rate': 0.293013,
+    #     'profit_loss': 4.778173304331723e-05,
+    #     'profit_loss_perc': 0.004778173304331723,
+    #     'direction': 'forward',
+    #     'trade_description_1': 'Start with ADA of 1. Swap at 4210.526315789473 for XETH acquiring 4210.526315789473',
+    #     'trade_description_2': 'Swap 4210.526315789473 of XETH at 0.0008105829712729395 for ZEUR acquiring 3.412980931675534',
+    #     'trade_description_3': 'Swap 3.412980931675534 of ZEUR at 0.293013 for ADA acquiring 1.0000477817330433'
+    # }
+
+    depth_1_reformatted_prices = reformatted_orderbook(
+        prices["pair_a_ask"], prices["pair_a_bid"], surface_dict["direction_trade_1"])

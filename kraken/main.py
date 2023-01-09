@@ -39,13 +39,12 @@ def step_2():
         time.sleep(0.5)
         for t_pair in structured_pairs:
             prices_dict = func_arbitrage.get_price_for_t_pair(t_pair)
-            surface_arb = func_arbitrage.calc_tri_arb_surface_rate(
+            surface_dict = func_arbitrage.calc_tri_arb_surface_rate(
                 t_pair, prices_dict)
 
-            if len(surface_arb) > 0:
-                print(surface_arb["trade_description_1"])
-                print(surface_arb["trade_description_2"])
-                print(surface_arb["trade_description_3"])
+            if len(surface_dict) > 0:
+                func_arbitrage.get_depth_from_orderbook(
+                    surface_dict, prices_dict)
 
 
 if __name__ == "__main__":
