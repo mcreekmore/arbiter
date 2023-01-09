@@ -1,4 +1,5 @@
 import json
+import time
 import requests
 import func_arbitrage
 
@@ -34,10 +35,17 @@ def step_2():
         structured_pairs = json.load(json_file)
 
     # get latest surface prices
-    for t_pair in structured_pairs:
-        prices_dict = func_arbitrage.get_price_for_t_pair(t_pair)
+    while True:
+        time.sleep(0.5)
+        for t_pair in structured_pairs:
+            prices_dict = func_arbitrage.get_price_for_t_pair(t_pair)
+            surface_arb = func_arbitrage.calc_tri_arb_surface_rate(
+                t_pair, prices_dict)
 
-    # requests.get('https://api.kraken.com/0/public/Depth').json()
+            if len(surface_arb) > 0:
+                print(surface_arb["trade_description_1"])
+                print(surface_arb["trade_description_2"])
+                print(surface_arb["trade_description_3"])
 
 
 if __name__ == "__main__":
