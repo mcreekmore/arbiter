@@ -43,8 +43,12 @@ def step_2():
                 t_pair, prices_dict)
 
             if len(surface_dict) > 0:
-                func_arbitrage.get_depth_from_orderbook(
+                real_rate_arb = func_arbitrage.get_depth_from_orderbook(
                     surface_dict, prices_dict)
+
+                if (len(real_rate_arb) > 0):
+                    print(json.dumps(real_rate_arb, indent=2))
+                    # execute here
 
 
 if __name__ == "__main__":

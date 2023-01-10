@@ -444,43 +444,103 @@ def calc_tri_arb_surface_rate(t_pair, prices):
 
 
 def reformatted_orderbook(asks, bids, c_direction):
-    pass
+    price_list_main = []
+
+    if c_direction == "base_to_quote":
+        for p in asks:
+            ask_price = float(p[0])
+            adj_price = 1 / ask_price if ask_price != 0 else 0
+            adj_quantity = float(p[1]) * ask_price
+            price_list_main.append([adj_price, adj_quantity])
+
+    if c_direction == "quote_to_base":
+        for p in bids:
+            bid_price = float(p[0])
+            adj_price = bid_price if bid_price != 0 else 0
+            adj_quantity = float(p[1])
+            price_list_main.append([adj_price, adj_quantity])
+
+    return price_list_main
 
 
-def get_depth_from_orderbook(surface_dict, prices):
+def calc_acquired_coin(amount_in, orderbook):
+    # depth calculation
     """
         CHALLENGES
 
-        full amount of available starting amount can be eaten at the first level (lvl 0)
+        full amount of starting amount can be eaten at the first level (lvl 0)
         some of the amount in can be eaten up by multiple levels
         some coins may not have enough liquidity
     """
 
-    # initial variables
-    # surface_dict = {
-    #     'swap_1': 'ADA',
-    #     'swap_2': 'XETH',
-    #     'swap_3': 'ZEUR',
-    #     'contract_1': 'ADAETH',
-    #     'contract_2': 'XETHZEUR',
-    #     'contract_3': 'ADAEUR',
-    #     'direction_trade_1': 'base_to_quote',
-    #     'direction_trade_2': 'base_to_quote',
-    #     'direction_trade_3': 'quote_to_base',
-    #     'starting_amount': 1,
-    #     'acquired_coin_t1': 4210.526315789473,
-    #     'acquired_coin_t2': 3.412980931675534,
-    #     'acquired_coin_t3': 1.0000477817330433,
-    #     'swap_1_rate': 4210.526315789473,
-    #     'swap_2_rate': 0.0008105829712729395,
-    #     'swap_3_rate': 0.293013,
-    #     'profit_loss': 4.778173304331723e-05,
-    #     'profit_loss_perc': 0.004778173304331723,
-    #     'direction': 'forward',
-    #     'trade_description_1': 'Start with ADA of 1. Swap at 4210.526315789473 for XETH acquiring 4210.526315789473',
-    #     'trade_description_2': 'Swap 4210.526315789473 of XETH at 0.0008105829712729395 for ZEUR acquiring 3.412980931675534',
-    #     'trade_description_3': 'Swap 3.412980931675534 of ZEUR at 0.293013 for ADA acquiring 1.0000477817330433'
-    # }
+    trading_balance = amount_in
+    quantity_bought = 0
+    acquired_coin = 0
+    counts = 0
+    amount_bought = 0
 
+    for level in orderbook:
+        # extract level price and quantity
+        level_price = level[0]
+        level_available_quantity = level[1]
+
+        # amount in is <= first level total amount
+        if trading_balance <= level_available_quantity:
+            quantity_bought = trading_balance
+            trading_balance = 0
+            amount_bought = quantity_bought * level_price
+
+        # amount in is > than a given level total amount
+        if trading_balance > level_available_quantity:
+            quantity_bought = level_available_quantity
+            trading_balance -= quantity_bought
+            amount_bought = quantity_bought * level_price
+
+        # accumulate acquired coin
+        acquired_coin += amount_bought
+
+        # exit trade
+        if trading_balance == 0:
+            return acquired_coin
+
+        # exit if not enough orderbook levels
+        counts += 1
+
+        if counts == len(orderbook):
+            return 0
+
+
+def get_depth_from_orderbook(surface_dict, prices):
     depth_1_reformatted_prices = reformatted_orderbook(
         prices["pair_a_ask"], prices["pair_a_bid"], surface_dict["direction_trade_1"])
+    depth_2_reformatted_prices = reformatted_orderbook(
+        prices["pair_b_ask"], prices["pair_b_bid"], surface_dict["direction_trade_2"])
+    depth_3_reformatted_prices = reformatted_orderbook(
+        prices["pair_c_ask"], prices["pair_c_bid"], surface_dict["direction_trade_3"])
+
+    # get acquired coins / get depth
+    acquired_coin_t1 = calc_acquired_coin(
+        surface_dict['starting_amount'], depth_1_reformatted_prices)
+    acquired_coin_t2 = calc_acquired_coin(
+        acquired_coin_t1, depth_2_reformatted_prices)
+    acquired_coin_t3 = calc_acquired_coin(
+        acquired_coin_t2, depth_3_reformatted_prices)
+
+    # calculate profit loss (aka real rate)
+    profit_loss = acquired_coin_t3 - surface_dict['starting_amount']
+    real_rate_perc = (
+        profit_loss / surface_dict['starting_amount']) * 100 if profit_loss != 0 else 0
+
+    if real_rate_perc > 0:
+        return {
+            "profit_loss": profit_loss,
+            "real_rate_perc": real_rate_perc,
+            "contract_1": surface_dict["contract_1"],
+            "contract_2": surface_dict["contract_2"],
+            "contract_3": surface_dict["contract_3"],
+            "contract_1_direction": surface_dict["direction_trade_1"],
+            "contract_2_direction": surface_dict["direction_trade_2"],
+            "contract_3_direction": surface_dict["direction_trade_3"],
+        }
+    else:
+        return {}
