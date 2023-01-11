@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request'
 
-const API_KEY = 'e0a28e66a81e4030dcaea0c521325646'
+const API_KEY = ''
 
 export const client = new GraphQLClient(
   `https://gateway.thegraph.com/api/${API_KEY}/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7`,
