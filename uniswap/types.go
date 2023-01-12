@@ -18,7 +18,8 @@ type Pool struct {
 }
 
 type Token struct {
-	Id     string
-	Name   string
-	Symbol string
+	Id       string
+	Name     string
+	Symbol   string
+	Decimals string
 }

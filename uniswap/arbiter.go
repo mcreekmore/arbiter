@@ -8,11 +8,9 @@ import (
 )
 
 func main() {
-	fmt.Println("testing")
+	fmt.Println("STARTING ARBITER...")
 
 	pools := fetchPools()
 
-	for _, p := range pools {
-		fmt.Println(p)
-	}
+	structureTradingPairs(pools)
 }
