@@ -23,3 +23,9 @@ type Token struct {
 	Symbol   string
 	Decimals string
 }
+
+type TriPool struct {
+	PoolA Pool
+	PoolB Pool
+	PoolC Pool
+}
