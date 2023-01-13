@@ -10,13 +10,15 @@ import (
 func main() {
 	fmt.Println("STARTING ARBITER...")
 
-	pools := fetchPools()
+	rawPools := fetchPools()
 
-	triPools := structureTradingPairs(pools)
+	pools := parsePools(&rawPools)
 
+	triPools := structureTradingPairs(&pools)
+
+	// calculate surface rates
 	for _, tp := range triPools {
-		fmt.Println(tp.PoolA.Token0.Symbol, tp.PoolA.Token1.Symbol)
-		fmt.Println(tp.PoolB.Token0.Symbol, tp.PoolB.Token1.Symbol)
-		fmt.Println(tp.PoolC.Token0.Symbol, tp.PoolC.Token1.Symbol)
+		sr := calcSurfaceRate(&tp)
+		fmt.Println(sr)
 	}
 }
