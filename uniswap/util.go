@@ -12,85 +12,226 @@ import (
 	"time"
 )
 
-// calculates surface rates for a triangular pair of pools
-func calcSurfaceRate(tp *TriPool) float32 {
-	// sa := 1.0 // starting amount
-	// // msr := 1.5 				// minimum surface rate
-	// var s1 string    // swap 1
-	// var s2 string    // swap 2
-	// var s3 string    // swap 3
-	// var s1r float64  // swap 1 rate
-	// var s2r float64  // swap 2 rate
-	// var s3r float64  // swap 3 rate
-	// var dt1 string   // direction trade 1
-	// var dt2 string   // direction trade 2
-	// var dt3 string   // direction trade 3
-	// var c1 string    // contract 1
-	// var c2 string    // contract 2
-	// var c3 string    // contract 3
-	// var act1 float64 // acquired coin trade 1
-	// var act2 float64 // acquired coin trade 2
-	// var act3 float64 // acquired coin trade 3
-	// c := false       // calculated
+func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
+	sa := 1.0
+	var pool1 Pool
+	var pool2 Pool
+	var pool3 Pool
+	var dt1 string // direction trade 1
+	var dt2 string // direction trade 2
+	var dt3 string // direction trade 3
+	var token2 string
+	var token3 string
+	// var token3 string
+	var swapRate1 float64
+	var swapRate2 float64
+	var swapRate3 float64
+	var act1 float64 // acquired coin transaction 1
+	var act2 float64 // acquired coin transaction 2
+	var act3 float64 // acquired coin transaction 3
 
-	// dl := []string{"forward", "reverse"}
+	// forward
+	// find first pool that has token 1
+	if d == "foreward" {
+		if tp.PoolA.Token0.Symbol == token1 || tp.PoolA.Token1.Symbol == token1 {
+			pool1 = tp.PoolA
+			if tp.PoolA.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolA.Token1.Symbol
+				swapRate1 = tp.PoolA.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolA.Token0.Symbol
+				swapRate1 = tp.PoolA.Token0Price
+			}
+		} else if tp.PoolB.Token0.Symbol == token1 || tp.PoolB.Token1.Symbol == token1 {
+			pool1 = tp.PoolB
+			if tp.PoolB.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolB.Token1.Symbol
+				swapRate1 = tp.PoolB.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolB.Token0.Symbol
+				swapRate1 = tp.PoolB.Token0Price
+			}
+		} else if tp.PoolC.Token0.Symbol == token1 || tp.PoolC.Token1.Symbol == token1 {
+			pool1 = tp.PoolC
+			if tp.PoolC.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolC.Token1.Symbol
+				swapRate1 = tp.PoolC.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolC.Token0.Symbol
+				swapRate1 = tp.PoolC.Token0Price
+			}
+		}
+	}
 
-	// for _, d := range dl {
-	// 	// assume start with aBase if forward
-	// 	if d == "forward" {
-	// 		s1 = tp.PoolA.Token0.Symbol
-	// 		s2 = tp.PoolA.Token1.Symbol
-	// 		s1r = tp.PoolA.Token1Price
-	// 		dt1 = "baseToQuote"
-	// 	}
+	// reverse
+	// find first pool that has token 1
+	if d == "reverse" {
+		if tp.PoolC.Token0.Symbol == token1 || tp.PoolC.Token1.Symbol == token1 {
+			pool1 = tp.PoolC
+			if tp.PoolC.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolC.Token1.Symbol
+				swapRate1 = tp.PoolC.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolC.Token0.Symbol
+				swapRate1 = tp.PoolC.Token0Price
+			}
+		} else if tp.PoolB.Token0.Symbol == token1 || tp.PoolB.Token1.Symbol == token1 {
+			pool1 = tp.PoolB
+			if tp.PoolB.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolB.Token1.Symbol
+				swapRate1 = tp.PoolB.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolB.Token0.Symbol
+				swapRate1 = tp.PoolB.Token0Price
+			}
+		} else if tp.PoolA.Token0.Symbol == token1 || tp.PoolA.Token1.Symbol == token1 {
+			pool1 = tp.PoolA
+			if tp.PoolA.Token0.Symbol == token1 {
+				dt1 = "baseToQuote"
+				token2 = tp.PoolA.Token1.Symbol
+				swapRate1 = tp.PoolA.Token1Price
+			} else {
+				dt1 = "quoteToBase"
+				token2 = tp.PoolA.Token0.Symbol
+				swapRate1 = tp.PoolA.Token0Price
+			}
+		}
+	}
 
-	// 	// assume start with aQuote if forward
-	// 	if d == "reverse" {
-	// 		s1 = tp.PoolA.Token1.Symbol
-	// 		s2 = tp.PoolA.Token0.Symbol
-	// 		s1r = tp.PoolA.Token0Price
-	// 		dt1 = "quoteToBase"
-	// 	}
+	// execute first trade
+	act1 = float64(sa) * swapRate1
 
-	// 	// place first trade
-	// 	c1 = tp.PoolA.Token0.Symbol + "_" + tp.PoolA.Token1.Symbol
-	// 	act1 = sa * s1r
+	// find next pool to use for token 2
+	if tp.PoolA != pool1 && (tp.PoolA.Token0.Symbol == token2 || tp.PoolA.Token1.Symbol == token2) {
+		pool2 = tp.PoolA
+		if tp.PoolA.Token0.Symbol == token2 {
+			dt2 = "baseToQuote"
+			// token2 = pool2.Token1.Symbol
+			token3 = pool2.Token1.Symbol
+			swapRate2 = pool2.Token1Price
+		} else {
+			dt2 = "quoteToBase"
+			// token2 = pool2.Token0.Symbol
+			token3 = pool2.Token0.Symbol
+			swapRate2 = pool2.Token0Price
+		}
+	} else if tp.PoolB != pool1 && (tp.PoolB.Token0.Symbol == token2 || tp.PoolB.Token1.Symbol == token2) {
+		pool2 = tp.PoolB
+		if tp.PoolB.Token0.Symbol == token2 {
+			dt2 = "baseToQuote"
+			// token2 = pool2.Token1.Symbol
+			token3 = pool2.Token1.Symbol
+			swapRate2 = pool2.Token1Price
+		} else {
+			dt2 = "quoteToBase"
+			// token2 = pool2.Token0.Symbol
+			token3 = pool2.Token0.Symbol
+			swapRate2 = pool2.Token0Price
+		}
+	} else if tp.PoolC != pool1 && (tp.PoolC.Token0.Symbol == token2 || tp.PoolC.Token1.Symbol == token2) {
+		pool2 = tp.PoolC
+		if tp.PoolC.Token0.Symbol == token2 {
+			dt2 = "baseToQuote"
+			// token2 = pool2.Token1.Symbol
+			token3 = pool2.Token1.Symbol
+			swapRate2 = pool2.Token1Price
+		} else {
+			dt2 = "quoteToBase"
+			// token2 = pool2.Token0.Symbol
+			token3 = pool2.Token0.Symbol
+			swapRate2 = pool2.Token0Price
+		}
+	}
 
-	// 	// forward: check if aQuote (acquired coin) matches bQuote
-	// 	if d == "forward" {
-	// 		if tp.PoolA.Token0.Id == tp.PoolB.Token0.Id && c == false {
-	// 			s2r = tp.PoolB.Token0Price
-	// 			act2 = act1 * s2r
-	// 			dt2 = "quoteToBase"
-	// 			c2 = tp.PoolB.Token0.Symbol + "_" + tp.PoolB.Token1.Symbol
+	// execute second trade
+	act2 = act1 * swapRate2
 
-	// 			// forward: check if bBase (acquired coin) matches cBase
-	// 			if tp.PoolB.Token0.Symbol == tp.PoolC.Token0.Symbol {
-	// 				s3 = tp.PoolC.Token0.Symbol
-	// 				s3r = tp.PoolC.Token1Price
-	// 				dt3 = "baseToQuote"
-	// 				c3 = tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol
-	// 			}
+	// find remaining pool
+	if tp.PoolA != pool1 && tp.PoolA != pool2 {
+		pool3 = tp.PoolA
+		if tp.PoolA.Token0.Symbol == token3 {
+			dt3 = "baseToQuote"
+			swapRate3 = tp.PoolA.Token1Price
+		} else {
+			dt3 = "quoteToBase"
+			swapRate3 = tp.PoolA.Token0Price
+		}
+	} else if tp.PoolB != pool1 && tp.PoolB != pool2 {
+		pool3 = tp.PoolB
+		if tp.PoolB.Token0.Symbol == token3 {
+			dt3 = "baseToQuote"
+			swapRate3 = tp.PoolB.Token1Price
+		} else {
+			dt3 = "quoteToBase"
+			swapRate3 = tp.PoolB.Token0Price
+		}
+	} else if tp.PoolC != pool1 && tp.PoolC != pool2 {
+		pool3 = tp.PoolC
+		if tp.PoolC.Token0.Symbol == token3 {
+			dt3 = "baseToQuote"
+			swapRate3 = tp.PoolC.Token1Price
+		} else {
+			dt3 = "quoteToBase"
+			swapRate3 = tp.PoolC.Token0Price
+		}
+	}
 
-	// 			// forward: check if bBase (acquired coin) matches cQuote
-	// 			if tp.PoolB.Token0.Symbol == tp.PoolC.Token1.Symbol {
-	// 				s3 = tp.PoolC.Token1.Symbol
-	// 				s3r = tp.PoolC.Token0Price
-	// 				dt3 = "quoteToBase"
-	// 				c3 = tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol
-	// 			}
-	// 		}
-	// 	}
-	// }
+	// execute third trade
+	act3 = act2 * swapRate3
 
-	fmt.Println(tp.PoolA.Token0.Symbol + "_" + tp.PoolA.Token1.Symbol + " / " + tp.PoolB.Token0.Symbol + "_" + tp.PoolB.Token1.Symbol + " / " + tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol)
-	return 0
+	// remove for production
+	Use(dt1, dt2, dt3, pool3, act2, act3)
+
+	// calculate profit/loss
+	pl := act3 - sa        // profit/loss
+	plp := (pl / sa) * 100 // profit loss percent
+
+	if plp > -99 { // msr = minimum surface rate
+		fmt.Println()
+		fmt.Println("Starting:", sa, token1)
+		fmt.Println("Trade 1: ", token1+" -> "+token2, act1)
+		fmt.Println("Trade 2: ", token2+" -> "+token3, act2)
+		fmt.Println("Trade 3: ", token3+" -> "+token1, act3)
+		fmt.Println("Profit", plp, "%")
+	}
+
+}
+
+func calcTokens(tp *TriPool) {
+	if !isElementExist(&tp.Tokens, &tp.PoolA.Token0.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolA.Token0.Symbol)
+	}
+	if !isElementExist(&tp.Tokens, &tp.PoolA.Token1.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolA.Token1.Symbol)
+	}
+	if !isElementExist(&tp.Tokens, &tp.PoolB.Token0.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolB.Token0.Symbol)
+	}
+	if !isElementExist(&tp.Tokens, &tp.PoolB.Token1.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolB.Token1.Symbol)
+	}
+	if !isElementExist(&tp.Tokens, &tp.PoolC.Token0.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolC.Token0.Symbol)
+	}
+	if !isElementExist(&tp.Tokens, &tp.PoolC.Token1.Symbol) {
+		tp.Tokens = append(tp.Tokens, tp.PoolC.Token1.Symbol)
+	}
 }
 
 // structures trading pair groups
 func structureTradingPairs(pools *[]Pool) []TriPool {
 	tPoolsList := []TriPool{}
-	removeDuplicatesList := []string{}
+	removeDuplicatePoolsList := []string{}
 
 	// loop through each coin to find potential matches
 	for _, poolA := range *pools {
@@ -136,15 +277,16 @@ func structureTradingPairs(pools *[]Pool) []TriPool {
 								uniqueString := strings.Join(tokenList, " ")
 
 								// output pair
-								if !isElementExist(&removeDuplicatesList, &uniqueString) {
+								if !isElementExist(&removeDuplicatePoolsList, &uniqueString) {
 									triPool := TriPool{
-										PoolA: poolA,
-										PoolB: poolB,
-										PoolC: poolC,
+										PoolA:  poolA,
+										PoolB:  poolB,
+										PoolC:  poolC,
+										Tokens: []string{},
 									}
 
 									tPoolsList = append(tPoolsList, triPool)
-									removeDuplicatesList = append(removeDuplicatesList, uniqueString)
+									removeDuplicatePoolsList = append(removeDuplicatePoolsList, uniqueString)
 								}
 							}
 						}
@@ -217,7 +359,7 @@ func parsePools(rp *[]RawPool) []Pool {
 func fetchPools() []RawPool {
 	q := `
 	{
-		pools(first: 100, orderBy: totalValueLockedETH, orderDirection: desc) {
+		pools(first: 12, orderBy: totalValueLockedETH, orderDirection: desc) {
 			id
 			token0Price
 			token1Price
@@ -281,3 +423,85 @@ func isElementExist(s *[]string, str *string) bool {
 	}
 	return false
 }
+
+// gets rid of pesky "declared but not used"
+func Use(vals ...interface{}) {
+	for _, val := range vals {
+		_ = val
+	}
+}
+
+// calculates surface rates for a triangular pair of pools
+// func calcSurfaceRate(tp *TriPool) float32 {
+// sa := 1.0 // starting amount
+// // msr := 1.5 				// minimum surface rate
+// var s1 string    // swap 1
+// var s2 string    // swap 2
+// var s3 string    // swap 3
+// var s1r float64  // swap 1 rate
+// var s2r float64  // swap 2 rate
+// var s3r float64  // swap 3 rate
+// var dt1 string   // direction trade 1
+// var dt2 string   // direction trade 2
+// var dt3 string   // direction trade 3
+// var c1 string    // contract 1
+// var c2 string    // contract 2
+// var c3 string    // contract 3
+// var act1 float64 // acquired coin trade 1
+// var act2 float64 // acquired coin trade 2
+// var act3 float64 // acquired coin trade 3
+// c := false       // calculated
+
+// dl := []string{"forward", "reverse"}
+
+// for _, d := range dl {
+// 	// assume start with aBase if forward
+// 	if d == "forward" {
+// 		s1 = tp.PoolA.Token0.Symbol
+// 		s2 = tp.PoolA.Token1.Symbol
+// 		s1r = tp.PoolA.Token1Price
+// 		dt1 = "baseToQuote"
+// 	}
+
+// 	// assume start with aQuote if forward
+// 	if d == "reverse" {
+// 		s1 = tp.PoolA.Token1.Symbol
+// 		s2 = tp.PoolA.Token0.Symbol
+// 		s1r = tp.PoolA.Token0Price
+// 		dt1 = "quoteToBase"
+// 	}
+
+// 	// place first trade
+// 	c1 = tp.PoolA.Token0.Symbol + "_" + tp.PoolA.Token1.Symbol
+// 	act1 = sa * s1r
+
+// 	// forward: check if aQuote (acquired coin) matches bQuote
+// 	if d == "forward" {
+// 		if tp.PoolA.Token0.Id == tp.PoolB.Token0.Id && c == false {
+// 			s2r = tp.PoolB.Token0Price
+// 			act2 = act1 * s2r
+// 			dt2 = "quoteToBase"
+// 			c2 = tp.PoolB.Token0.Symbol + "_" + tp.PoolB.Token1.Symbol
+
+// 			// forward: check if bBase (acquired coin) matches cBase
+// 			if tp.PoolB.Token0.Symbol == tp.PoolC.Token0.Symbol {
+// 				s3 = tp.PoolC.Token0.Symbol
+// 				s3r = tp.PoolC.Token1Price
+// 				dt3 = "baseToQuote"
+// 				c3 = tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol
+// 			}
+
+// 			// forward: check if bBase (acquired coin) matches cQuote
+// 			if tp.PoolB.Token0.Symbol == tp.PoolC.Token1.Symbol {
+// 				s3 = tp.PoolC.Token1.Symbol
+// 				s3r = tp.PoolC.Token0Price
+// 				dt3 = "quoteToBase"
+// 				c3 = tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol
+// 			}
+// 		}
+// 	}
+// }
+
+// fmt.Println(tp.PoolA.Token0.Symbol + "_" + tp.PoolA.Token1.Symbol + " / " + tp.PoolB.Token0.Symbol + "_" + tp.PoolB.Token1.Symbol + " / " + tp.PoolC.Token0.Symbol + "_" + tp.PoolC.Token1.Symbol)
+// 	return 0
+// }

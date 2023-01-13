@@ -33,9 +33,10 @@ type RawToken struct {
 }
 
 type TriPool struct {
-	PoolA Pool
-	PoolB Pool
-	PoolC Pool
+	PoolA  Pool
+	PoolB  Pool
+	PoolC  Pool
+	Tokens []string
 }
 
 type PoolRes struct {

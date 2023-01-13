@@ -16,9 +16,17 @@ func main() {
 
 	triPools := structureTradingPairs(&pools)
 
-	// calculate surface rates
+	// calculate surface rates for triangular pair
 	for _, tp := range triPools {
-		sr := calcSurfaceRate(&tp)
-		fmt.Println(sr)
+		calcTokens(&tp)
+
+		// calculate surface rate for specific token
+		for _, t := range tp.Tokens {
+			calcSurfaceRateForToken(t, tp, "foreward", .5)
+			calcSurfaceRateForToken(t, tp, "reverse", .5)
+		}
+
+		// sr := calcSurfaceRate(&tp)
+		// fmt.Println(sr)
 	}
 }
