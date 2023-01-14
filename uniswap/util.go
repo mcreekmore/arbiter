@@ -194,7 +194,7 @@ func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
 
 	// calculate profit/loss
 	pl := act3 - sa        // profit/loss
-	plp := (pl / sa) * 100 // profit loss percent
+	plp := (pl / sa) * 100 // profit/loss percent
 
 	if plp > -99 { // msr = minimum surface rate
 		fmt.Println()
@@ -208,22 +208,22 @@ func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
 }
 
 func calcTokens(tp *TriPool) {
-	if !isElementExist(&tp.Tokens, &tp.PoolA.Token0.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolA.Token0.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolA.Token0.Symbol)
 	}
-	if !isElementExist(&tp.Tokens, &tp.PoolA.Token1.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolA.Token1.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolA.Token1.Symbol)
 	}
-	if !isElementExist(&tp.Tokens, &tp.PoolB.Token0.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolB.Token0.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolB.Token0.Symbol)
 	}
-	if !isElementExist(&tp.Tokens, &tp.PoolB.Token1.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolB.Token1.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolB.Token1.Symbol)
 	}
-	if !isElementExist(&tp.Tokens, &tp.PoolC.Token0.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolC.Token0.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolC.Token0.Symbol)
 	}
-	if !isElementExist(&tp.Tokens, &tp.PoolC.Token1.Symbol) {
+	if !contains(&tp.Tokens, &tp.PoolC.Token1.Symbol) {
 		tp.Tokens = append(tp.Tokens, tp.PoolC.Token1.Symbol)
 	}
 }
@@ -277,7 +277,7 @@ func structureTradingPairs(pools *[]Pool) []TriPool {
 								uniqueString := strings.Join(tokenList, " ")
 
 								// output pair
-								if !isElementExist(&removeDuplicatePoolsList, &uniqueString) {
+								if !contains(&removeDuplicatePoolsList, &uniqueString) {
 									triPool := TriPool{
 										PoolA:  poolA,
 										PoolB:  poolB,
@@ -415,7 +415,7 @@ func query(q *string) []byte {
 }
 
 // checks if a string is found in array
-func isElementExist(s *[]string, str *string) bool {
+func contains(s *[]string, str *string) bool {
 	for _, v := range *s {
 		if v == *str {
 			return true
