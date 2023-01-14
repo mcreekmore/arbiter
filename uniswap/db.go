@@ -4,19 +4,31 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func connectDB() {
+	/*
+		Read env variables
+	*/
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatalf("Some error occured. Err: %s", err)
+	}
+
+	uri := os.Getenv("MONGODB_URI")
+	// fmt.Println(uri)
 
 	/*
 		Connect to my cluster
 	*/
-	client, err := mongo.NewClient(options.Client().ApplyURI("<MONGODB_URI>"))
+	client, err := mongo.NewClient(options.Client().ApplyURI(uri))
 	if err != nil {
 		log.Fatal(err)
 	}
