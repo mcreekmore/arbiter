@@ -404,11 +404,12 @@ func query(q *string) []byte {
 	client := &http.Client{Timeout: time.Second * 10}
 	response, err := client.Do(request)
 
+	defer response.Body.Close()
+
 	if err != nil {
 		fmt.Printf("The HTTP request failed with error %s\n", err)
 	}
 
-	defer response.Body.Close()
 	data, _ := io.ReadAll(response.Body)
 
 	return data
