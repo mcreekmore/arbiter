@@ -356,7 +356,7 @@ func parsePools(rp *[]RawPool) []Pool {
 }
 
 // queries uniswap graph for pools
-func fetchPools(n int) []RawPool {
+func fetchPools(c int) []RawPool {
 	q := fmt.Sprintf(`
 	{
 		pools(first: %d, orderBy: totalValueLockedETH, orderDirection: desc) {
@@ -378,7 +378,7 @@ func fetchPools(n int) []RawPool {
 			totalValueLockedETH
 		}
 	}
-	`, n)
+	`, c)
 
 	b := query(&q)
 
