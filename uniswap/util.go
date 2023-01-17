@@ -196,7 +196,7 @@ func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
 	pl := act3 - sa        // profit/loss
 	plp := (pl / sa) * 100 // profit/loss percent
 
-	if plp > -99 { // msr = minimum surface rate
+	if plp > msr { // msr = minimum surface rate
 		fmt.Println()
 		fmt.Println("Starting:", sa, token1)
 		fmt.Println("Trade 1: ", token1+" -> "+token2, act1)
@@ -356,10 +356,10 @@ func parsePools(rp *[]RawPool) []Pool {
 }
 
 // queries uniswap graph for pools
-func fetchPools() []RawPool {
-	q := `
+func fetchPools(n int) []RawPool {
+	q := fmt.Sprintf(`
 	{
-		pools(first: 12, orderBy: totalValueLockedETH, orderDirection: desc) {
+		pools(first: %d, orderBy: totalValueLockedETH, orderDirection: desc) {
 			id
 			token0Price
 			token1Price
@@ -378,7 +378,7 @@ func fetchPools() []RawPool {
 			totalValueLockedETH
 		}
 	}
-	`
+	`, n)
 
 	b := query(&q)
 

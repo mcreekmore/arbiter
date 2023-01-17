@@ -10,10 +10,10 @@ import (
 func main() {
 	fmt.Println("STARTING ARBITER...")
 
-	fmt.Println("Connecting to mongo...")
-	connectDB()
+	// fmt.Println("Connecting to mongo...")
+	// connectDB()
 
-	rawPools := fetchPools()
+	rawPools := fetchPools(30)
 
 	pools := parsePools(&rawPools)
 
@@ -25,8 +25,8 @@ func main() {
 
 		// calculate surface rate for specific token
 		for _, t := range tp.Tokens {
-			calcSurfaceRateForToken(t, tp, "foreward", .5)
-			calcSurfaceRateForToken(t, tp, "reverse", .5)
+			calcSurfaceRateForToken(t, tp, "foreward", .2)
+			calcSurfaceRateForToken(t, tp, "reverse", .2)
 		}
 
 		// sr := calcSurfaceRate(&tp)
