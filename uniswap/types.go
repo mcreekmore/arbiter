@@ -46,3 +46,21 @@ type PoolRes struct {
 type RawPools struct {
 	Pools []RawPool
 }
+
+type SurfaceRate struct {
+	Token1             string
+	Token2             string
+	Token3             string
+	Pool1              Pool
+	Pool2              Pool
+	Pool3              Pool
+	ProfitLoss         float64
+	ProfitLossPercent  float64
+	StartingAmount     float64
+	AcquiredCoinTrade1 float64
+	AcquiredCoinTrade2 float64
+	AcquiredCoinTrade3 float64
+	DirectionTrade1    string
+	DirectionTrade2    string
+	DirectionTrade3    string
+}

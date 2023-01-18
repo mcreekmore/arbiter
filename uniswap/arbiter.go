@@ -13,11 +13,13 @@ func main() {
 	// fmt.Println("Connecting to mongo...")
 	// connectDB()
 
-	rawPools := fetchPools(50)
+	rawPools := fetchPools(100)
 
 	pools := parsePools(&rawPools)
 
 	triPools := structureTradingPairs(&pools)
+
+	srl := []SurfaceRate{} // surface rates list
 
 	// calculate surface rates for triangular pair
 	for _, tp := range triPools {
@@ -25,11 +27,18 @@ func main() {
 
 		// calculate surface rate for specific token
 		for _, t := range tp.Tokens {
-			calcSurfaceRateForToken(t, tp, "foreward", .1)
-			calcSurfaceRateForToken(t, tp, "reverse", .1)
+			calcSurfaceRateForToken(t, tp, "foreward", .1, &srl)
+			calcSurfaceRateForToken(t, tp, "reverse", .1, &srl)
 		}
+	}
 
-		// sr := calcSurfaceRate(&tp)
-		// fmt.Println(sr)
+	for _, sr := range srl {
+		fmt.Println()
+		fmt.Println("Starting:", sr.StartingAmount, sr.Token1)
+		fmt.Println("Trade 1: ", sr.Token1+" -> "+sr.Token2, sr.AcquiredCoinTrade1)
+		fmt.Println("Trade 2: ", sr.Token2+" -> "+sr.Token3, sr.AcquiredCoinTrade2)
+		fmt.Println("Trade 3: ", sr.Token3+" -> "+sr.Token1, sr.AcquiredCoinTrade3)
+		fmt.Printf("Profit %v%%", sr.ProfitLossPercent)
+		fmt.Println()
 	}
 }

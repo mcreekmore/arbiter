@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
+func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64, srl *[]SurfaceRate) {
 	sa := 1.0
 	var pool1 Pool
 	var pool2 Pool
@@ -22,7 +22,6 @@ func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
 	var dt3 string // direction trade 3
 	var token2 string
 	var token3 string
-	// var token3 string
 	var swapRate1 float64
 	var swapRate2 float64
 	var swapRate3 float64
@@ -189,22 +188,31 @@ func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64) {
 	// execute third trade
 	act3 = act2 * swapRate3
 
-	// remove for production
-	Use(dt1, dt2, dt3, pool3, act2, act3)
-
 	// calculate profit/loss
 	pl := act3 - sa        // profit/loss
 	plp := (pl / sa) * 100 // profit/loss percent
 
 	if plp > msr { // msr = minimum surface rate
-		fmt.Println()
-		fmt.Println("Starting:", sa, token1)
-		fmt.Println("Trade 1: ", token1+" -> "+token2, act1)
-		fmt.Println("Trade 2: ", token2+" -> "+token3, act2)
-		fmt.Println("Trade 3: ", token3+" -> "+token1, act3)
-		fmt.Println("Profit", plp, "%")
-	}
+		sr := SurfaceRate{
+			Token1:             token1,
+			Token2:             token2,
+			Token3:             token3,
+			Pool1:              pool1,
+			Pool2:              pool2,
+			Pool3:              pool3,
+			ProfitLoss:         pl,
+			ProfitLossPercent:  plp,
+			StartingAmount:     sa,
+			AcquiredCoinTrade1: act1,
+			AcquiredCoinTrade2: act2,
+			AcquiredCoinTrade3: act3,
+			DirectionTrade1:    dt1,
+			DirectionTrade2:    dt2,
+			DirectionTrade3:    dt3,
+		}
 
+		*srl = append(*srl, sr)
+	}
 }
 
 func calcTokens(tp *TriPool) {
