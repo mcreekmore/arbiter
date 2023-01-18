@@ -17,7 +17,7 @@ func connectDB() {
 	/*
 		Read env variables
 	*/
-	err := godotenv.Load()
+	err := godotenv.Load("../.env")
 	if err != nil {
 		log.Fatalf("Some error occured. Err: %s", err)
 	}

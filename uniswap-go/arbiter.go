@@ -12,8 +12,8 @@ import (
 func main() {
 	fmt.Println("STARTING ARBITER...")
 
-	// fmt.Println("Connecting to mongo...")
-	// connectDB()
+	fmt.Println("Connecting to mongo...")
+	connectDB()
 
 	rawPools := fetchPools(100)
 
