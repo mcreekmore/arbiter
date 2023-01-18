@@ -1,0 +1,1634 @@
+[
+  {
+    "Token1": "USDC",
+    "Token2": "DAI",
+    "Token3": "WETH",
+    "Pool1": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "Pool2": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "Pool3": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "ProfitLoss": 0.0010126926026952088,
+    "ProfitLossPercent": 0.10126926026952088,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.9999644955598214,
+    "AcquiredCoinTrade2": 0.0006334832660292368,
+    "AcquiredCoinTrade3": 1.0010126926026952,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "WETH",
+    "Token2": "USDC",
+    "Token3": "DAI",
+    "Pool1": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "Pool2": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "Pool3": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "ProfitLoss": 0.0010126926026952088,
+    "ProfitLossPercent": 0.10126926026952088,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1580.1722733375186,
+    "AcquiredCoinTrade2": 1580.1161702055679,
+    "AcquiredCoinTrade3": 1.0010126926026952,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "DAI",
+    "Token2": "WETH",
+    "Token3": "USDC",
+    "Pool1": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "Pool2": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "Pool3": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "ProfitLoss": 0.0010126926026952088,
+    "ProfitLossPercent": 0.10126926026952088,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.0006335057582965351,
+    "AcquiredCoinTrade2": 1.0010482342598443,
+    "AcquiredCoinTrade3": 1.0010126926026952,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "USDC",
+    "Token2": "WBTC",
+    "Token3": "WETH",
+    "Pool1": {
+      "Id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35",
+      "Token0Price": 0.00004708652684621995,
+      "Token1Price": 21237.49758112131,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 32877.47529246064
+    },
+    "Pool2": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool3": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "ProfitLoss": 0.0014398939363589047,
+    "ProfitLossPercent": 0.14398939363589047,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.00004708652684621995,
+    "AcquiredCoinTrade2": 0.0006337536171427653,
+    "AcquiredCoinTrade3": 1.001439893936359,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "WETH",
+    "Token2": "USDC",
+    "Token3": "WBTC",
+    "Pool1": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "Pool2": {
+      "Id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35",
+      "Token0Price": 0.00004708652684621995,
+      "Token1Price": 21237.49758112131,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 32877.47529246064
+    },
+    "Pool3": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "ProfitLoss": 0.0014398939363586827,
+    "ProfitLossPercent": 0.14398939363586827,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1580.1722733375186,
+    "AcquiredCoinTrade2": 0.07440482417015948,
+    "AcquiredCoinTrade3": 1.0014398939363587,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "WBTC",
+    "Token2": "WETH",
+    "Token3": "USDC",
+    "Pool1": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool2": {
+      "Id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "Token0Price": 1580.1722733375186,
+      "Token1Price": 0.0006328423912209753,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 215725.8335693562
+    },
+    "Pool3": {
+      "Id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35",
+      "Token0Price": 0.00004708652684621995,
+      "Token1Price": 21237.49758112131,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 32877.47529246064
+    },
+    "ProfitLoss": 0.0014398939363589047,
+    "ProfitLossPercent": 0.14398939363589047,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 13.45934091109636,
+    "AcquiredCoinTrade2": 21268.077325111804,
+    "AcquiredCoinTrade3": 1.001439893936359,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "DAI",
+    "Token2": "USDC",
+    "Token3": "AVINOC",
+    "Pool1": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "Pool2": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "Pool3": {
+      "Id": "0xf482fce04ef6f29ad56e46fef2de038c42126e2e",
+      "Token0Price": 0.25668683678182674,
+      "Token1Price": 3.8957977453668917,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 4625.171233538192
+    },
+    "ProfitLoss": 0.002383380271217872,
+    "ProfitLossPercent": 0.2383380271217872,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1.0000355057007886,
+    "AcquiredCoinTrade2": 3.905082912853854,
+    "AcquiredCoinTrade3": 1.0023833802712179,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "USDC",
+    "Token2": "AVINOC",
+    "Token3": "DAI",
+    "Pool1": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "Pool2": {
+      "Id": "0xf482fce04ef6f29ad56e46fef2de038c42126e2e",
+      "Token0Price": 0.25668683678182674,
+      "Token1Price": 3.8957977453668917,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 4625.171233538192
+    },
+    "Pool3": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "ProfitLoss": 0.002383380271217872,
+    "ProfitLossPercent": 0.2383380271217872,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 3.9049442650711823,
+    "AcquiredCoinTrade2": 1.002347791210457,
+    "AcquiredCoinTrade3": 1.0023833802712179,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "AVINOC",
+    "Token2": "DAI",
+    "Token3": "USDC",
+    "Pool1": {
+      "Id": "0xf482fce04ef6f29ad56e46fef2de038c42126e2e",
+      "Token0Price": 0.25668683678182674,
+      "Token1Price": 3.8957977453668917,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 4625.171233538192
+    },
+    "Pool2": {
+      "Id": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "Token0Price": 0.9999644955598214,
+      "Token1Price": 1.0000355057007886,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 149628.2824631129
+    },
+    "Pool3": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "ProfitLoss": 0.002383380271217872,
+    "ProfitLossPercent": 0.2383380271217872,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.25668683678182674,
+    "AcquiredCoinTrade2": 0.2566959506278499,
+    "AcquiredCoinTrade3": 1.0023833802712179,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "WBTC",
+    "Token2": "WETH",
+    "Token3": "USDT",
+    "Pool1": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool2": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "Pool3": {
+      "Id": "0x9db9e0e53058c89e5b94e29621a205198648425b",
+      "Token0Price": 0.000047132634974319885,
+      "Token1Price": 21216.721716170712,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 3091.775829000133
+    },
+    "ProfitLoss": 0.002227429175780893,
+    "ProfitLossPercent": 0.22274291757808928,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 13.45934091109636,
+    "AcquiredCoinTrade2": 21263.980461135736,
+    "AcquiredCoinTrade3": 1.002227429175781,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "WETH",
+    "Token2": "USDT",
+    "Token3": "WBTC",
+    "Pool1": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "Pool2": {
+      "Id": "0x9db9e0e53058c89e5b94e29621a205198648425b",
+      "Token0Price": 0.000047132634974319885,
+      "Token1Price": 21216.721716170712,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 3091.775829000133
+    },
+    "Pool3": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "ProfitLoss": 0.002227429175780893,
+    "ProfitLossPercent": 0.22274291757808928,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1579.8678851803918,
+    "AcquiredCoinTrade2": 0.07446333633985813,
+    "AcquiredCoinTrade3": 1.002227429175781,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "USDT",
+    "Token2": "WBTC",
+    "Token3": "WETH",
+    "Pool1": {
+      "Id": "0x9db9e0e53058c89e5b94e29621a205198648425b",
+      "Token0Price": 0.000047132634974319885,
+      "Token1Price": 21216.721716170712,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 3091.775829000133
+    },
+    "Pool2": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool3": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "ProfitLoss": 0.002227429175780671,
+    "ProfitLossPercent": 0.22274291757806708,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.000047132634974319885,
+    "AcquiredCoinTrade2": 0.0006343742021576348,
+    "AcquiredCoinTrade3": 1.0022274291757807,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "WBTC",
+    "Token2": "WETH",
+    "Token3": "FUN",
+    "Pool1": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool2": {
+      "Id": "0x29f0096512b4af1d689c1a11a867a6e707a8dcde",
+      "Token0Price": 220403.91045401993,
+      "Token1Price": 0.0000045371245815922914,
+      "Token0": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 2495.4801719455368
+    },
+    "Pool3": {
+      "Id": "0x3ffedcddd268511acc44ae67845bdd56c8417fa4",
+      "Token0Price": 3.3768118230900597e-7,
+      "Token1Price": 2961373.189830039,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "TotalValueLockedETH": 2470.9984485818927
+    },
+    "ProfitLoss": 0.0017283127729212922,
+    "ProfitLossPercent": 0.17283127729212922,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 13.45934091109636,
+    "AcquiredCoinTrade2": 2966491.368939409,
+    "AcquiredCoinTrade3": 1.0017283127729213,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "WETH",
+    "Token2": "FUN",
+    "Token3": "WBTC",
+    "Pool1": {
+      "Id": "0x29f0096512b4af1d689c1a11a867a6e707a8dcde",
+      "Token0Price": 220403.91045401993,
+      "Token1Price": 0.0000045371245815922914,
+      "Token0": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 2495.4801719455368
+    },
+    "Pool2": {
+      "Id": "0x3ffedcddd268511acc44ae67845bdd56c8417fa4",
+      "Token0Price": 3.3768118230900597e-7,
+      "Token1Price": 2961373.189830039,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "TotalValueLockedETH": 2470.9984485818927
+    },
+    "Pool3": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "ProfitLoss": 0.0017283127729215142,
+    "ProfitLossPercent": 0.17283127729215142,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 220403.91045401993,
+    "AcquiredCoinTrade2": 0.07442625306764174,
+    "AcquiredCoinTrade3": 1.0017283127729215,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "FUN",
+    "Token2": "WBTC",
+    "Token3": "WETH",
+    "Pool1": {
+      "Id": "0x3ffedcddd268511acc44ae67845bdd56c8417fa4",
+      "Token0Price": 3.3768118230900597e-7,
+      "Token1Price": 2961373.189830039,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "TotalValueLockedETH": 2470.9984485818927
+    },
+    "Pool2": {
+      "Id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "Token0Price": 0.07429784315631417,
+      "Token1Price": 13.45934091109636,
+      "Token0": {
+        "Id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "Name": "Wrapped BTC",
+        "Symbol": "WBTC",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 131222.68941932239
+    },
+    "Pool3": {
+      "Id": "0x29f0096512b4af1d689c1a11a867a6e707a8dcde",
+      "Token0Price": 220403.91045401993,
+      "Token1Price": 0.0000045371245815922914,
+      "Token0": {
+        "Id": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "Name": "FunFair",
+        "Symbol": "FUN",
+        "Decimals": 8
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 2495.4801719455368
+    },
+    "ProfitLoss": 0.0017283127729212922,
+    "ProfitLossPercent": 0.17283127729212922,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 3.3768118230900597e-7,
+    "AcquiredCoinTrade2": 0.000004544966151958992,
+    "AcquiredCoinTrade3": 1.0017283127729213,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "WETH",
+    "Token2": "USDT",
+    "Token3": "DAI",
+    "Pool1": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "Pool2": {
+      "Id": "0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
+      "Token0Price": 1.0001505141964961,
+      "Token1Price": 0.9998495084546178,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2336.6533845197705
+    },
+    "Pool3": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "ProfitLoss": 0.001006045556279922,
+    "ProfitLossPercent": 0.1006045556279922,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1579.8678851803918,
+    "AcquiredCoinTrade2": 1580.1056777256997,
+    "AcquiredCoinTrade3": 1.00100604555628,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "USDT",
+    "Token2": "DAI",
+    "Token3": "WETH",
+    "Pool1": {
+      "Id": "0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
+      "Token0Price": 1.0001505141964961,
+      "Token1Price": 0.9998495084546178,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2336.6533845197705
+    },
+    "Pool2": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "Pool3": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "ProfitLoss": 0.001006045556279922,
+    "ProfitLossPercent": 0.1006045556279922,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1.0001505141964961,
+    "AcquiredCoinTrade2": 0.0006336011099067208,
+    "AcquiredCoinTrade3": 1.00100604555628,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "DAI",
+    "Token2": "WETH",
+    "Token3": "USDT",
+    "Pool1": {
+      "Id": "0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",
+      "Token0Price": 1578.5176170915154,
+      "Token1Price": 0.0006335057582965351,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 30459.728242849207
+    },
+    "Pool2": {
+      "Id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "Token0Price": 0.0006329643189663409,
+      "Token1Price": 1579.8678851803918,
+      "Token0": {
+        "Id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "Name": "Wrapped Ether",
+        "Symbol": "WETH",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 88024.35398099344
+    },
+    "Pool3": {
+      "Id": "0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
+      "Token0Price": 1.0001505141964961,
+      "Token1Price": 0.9998495084546178,
+      "Token0": {
+        "Id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "Name": "Dai Stablecoin",
+        "Symbol": "DAI",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2336.6533845197705
+    },
+    "ProfitLoss": 0.001006045556279922,
+    "ProfitLossPercent": 0.1006045556279922,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.0006335057582965351,
+    "AcquiredCoinTrade2": 1.0008554026095473,
+    "AcquiredCoinTrade3": 1.00100604555628,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "FRAX",
+    "Token2": "LUSD",
+    "Token3": "USDC",
+    "Pool1": {
+      "Id": "0xf1ddc084500fc774bb835f412aea908259b55ce4",
+      "Token0Price": 0.9950128200219729,
+      "Token1Price": 1.005012176604837,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3778.4156018223935
+    },
+    "Pool2": {
+      "Id": "0x4e0924d3a751be199c426d52fb1f2337fa96f736",
+      "Token0Price": 0.9802931857844406,
+      "Token1Price": 1.020102979905741,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2631.1346597326337
+    },
+    "Pool3": {
+      "Id": "0xc63b0708e2f7e69cb8a1df0e1389a98c35a76d52",
+      "Token0Price": 1.0005193117569529,
+      "Token1Price": 0.9994809577877704,
+      "Token0": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 64643.35723598839
+    },
+    "ProfitLoss": 0.015542652253668798,
+    "ProfitLossPercent": 1.5542652253668798,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.9950128200219729,
+    "AcquiredCoinTrade2": 1.0150155427488294,
+    "AcquiredCoinTrade3": 1.0155426522536688,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "USDC",
+    "Token2": "FRAX",
+    "Token3": "LUSD",
+    "Pool1": {
+      "Id": "0xc63b0708e2f7e69cb8a1df0e1389a98c35a76d52",
+      "Token0Price": 1.0005193117569529,
+      "Token1Price": 0.9994809577877704,
+      "Token0": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 64643.35723598839
+    },
+    "Pool2": {
+      "Id": "0xf1ddc084500fc774bb835f412aea908259b55ce4",
+      "Token0Price": 0.9950128200219729,
+      "Token1Price": 1.005012176604837,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3778.4156018223935
+    },
+    "Pool3": {
+      "Id": "0x4e0924d3a751be199c426d52fb1f2337fa96f736",
+      "Token0Price": 0.9802931857844406,
+      "Token1Price": 1.020102979905741,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2631.1346597326337
+    },
+    "ProfitLoss": 0.015542652253668798,
+    "ProfitLossPercent": 1.5542652253668798,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1.0005193117569529,
+    "AcquiredCoinTrade2": 0.9955295418777291,
+    "AcquiredCoinTrade3": 1.0155426522536688,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  },
+  {
+    "Token1": "LUSD",
+    "Token2": "USDC",
+    "Token3": "FRAX",
+    "Pool1": {
+      "Id": "0x4e0924d3a751be199c426d52fb1f2337fa96f736",
+      "Token0Price": 0.9802931857844406,
+      "Token1Price": 1.020102979905741,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 2631.1346597326337
+    },
+    "Pool2": {
+      "Id": "0xc63b0708e2f7e69cb8a1df0e1389a98c35a76d52",
+      "Token0Price": 1.0005193117569529,
+      "Token1Price": 0.9994809577877704,
+      "Token0": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 64643.35723598839
+    },
+    "Pool3": {
+      "Id": "0xf1ddc084500fc774bb835f412aea908259b55ce4",
+      "Token0Price": 0.9950128200219729,
+      "Token1Price": 1.005012176604837,
+      "Token0": {
+        "Id": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+        "Name": "LUSD Stablecoin",
+        "Symbol": "LUSD",
+        "Decimals": 18
+      },
+      "Token1": {
+        "Id": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "Name": "Frax",
+        "Symbol": "FRAX",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3778.4156018223935
+    },
+    "ProfitLoss": 0.015542652253668576,
+    "ProfitLossPercent": 1.5542652253668576,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1.020102979905741,
+    "AcquiredCoinTrade2": 1.0206327313765087,
+    "AcquiredCoinTrade3": 1.0155426522536686,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "USDC",
+    "Token2": "AVINOC",
+    "Token3": "USDT",
+    "Pool1": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "Pool2": {
+      "Id": "0x2eb8f5708f238b0a2588f044ade8dea7221639ab",
+      "Token0Price": 0.25661342919746855,
+      "Token1Price": 3.8969121886075664,
+      "Token0": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3858.7799143767647
+    },
+    "Pool3": {
+      "Id": "0x3416cf6c708da44db2624d63ea0aaef7113527c6",
+      "Token0Price": 1.0001479347125553,
+      "Token1Price": 0.9998520871688868,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 33410.99058870681
+    },
+    "ProfitLoss": 0.0022093783114189858,
+    "ProfitLossPercent": 0.22093783114189858,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 3.9049442650711823,
+    "AcquiredCoinTrade2": 1.0020611386849048,
+    "AcquiredCoinTrade3": 1.002209378311419,
+    "DirectionTrade1": "baseToQuote",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "USDT",
+    "Token2": "USDC",
+    "Token3": "AVINOC",
+    "Pool1": {
+      "Id": "0x3416cf6c708da44db2624d63ea0aaef7113527c6",
+      "Token0Price": 1.0001479347125553,
+      "Token1Price": 0.9998520871688868,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 33410.99058870681
+    },
+    "Pool2": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "Pool3": {
+      "Id": "0x2eb8f5708f238b0a2588f044ade8dea7221639ab",
+      "Token0Price": 0.25661342919746855,
+      "Token1Price": 3.8969121886075664,
+      "Token0": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3858.7799143767647
+    },
+    "ProfitLoss": 0.0022093783114187637,
+    "ProfitLossPercent": 0.22093783114187637,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 1.0001479347125553,
+    "AcquiredCoinTrade2": 3.90552194187858,
+    "AcquiredCoinTrade3": 1.0022093783114188,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "baseToQuote",
+    "DirectionTrade3": "quoteToBase"
+  },
+  {
+    "Token1": "AVINOC",
+    "Token2": "USDT",
+    "Token3": "USDC",
+    "Pool1": {
+      "Id": "0x2eb8f5708f238b0a2588f044ade8dea7221639ab",
+      "Token0Price": 0.25661342919746855,
+      "Token1Price": 3.8969121886075664,
+      "Token0": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3858.7799143767647
+    },
+    "Pool2": {
+      "Id": "0x3416cf6c708da44db2624d63ea0aaef7113527c6",
+      "Token0Price": 1.0001479347125553,
+      "Token1Price": 0.9998520871688868,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "Name": "Tether USD",
+        "Symbol": "USDT",
+        "Decimals": 6
+      },
+      "TotalValueLockedETH": 33410.99058870681
+    },
+    "Pool3": {
+      "Id": "0x04a2004b2032fef2ba93f40b0e34d26ab7b00120",
+      "Token0Price": 0.25608560125806845,
+      "Token1Price": 3.9049442650711823,
+      "Token0": {
+        "Id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "Name": "USD Coin",
+        "Symbol": "USDC",
+        "Decimals": 6
+      },
+      "Token1": {
+        "Id": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "Name": "AVINOC Token",
+        "Symbol": "AVINOC",
+        "Decimals": 18
+      },
+      "TotalValueLockedETH": 3592.328815975623
+    },
+    "ProfitLoss": 0.0022093783114187637,
+    "ProfitLossPercent": 0.22093783114187637,
+    "StartingAmount": 1,
+    "AcquiredCoinTrade1": 0.25661342919746855,
+    "AcquiredCoinTrade2": 0.25665139123135466,
+    "AcquiredCoinTrade3": 1.0022093783114188,
+    "DirectionTrade1": "quoteToBase",
+    "DirectionTrade2": "quoteToBase",
+    "DirectionTrade3": "baseToQuote"
+  }
+]
