@@ -37,8 +37,8 @@ async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
   // reformat amount into big number
   let amountInString = ethers.utils
     .parseUnits(
-      amountIn.toString(),
-      ethers.BigNumber.from(inputTokenA.Decimals.toString())
+      amountIn.toFixed(inputTokenA.Decimals),
+      inputTokenA.Decimals.toString()
     )
     .toString()
 
@@ -64,7 +64,7 @@ async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
       ethers.BigNumber.from(inputTokenB.Decimals.toString())
     )
 
-    return parseFloat(outputAmount)
+    return Number(outputAmount)
   } catch (err) {
     console.log(err)
   }
