@@ -45,5 +45,5 @@ func main() {
 	}
 
 	file, _ := json.MarshalIndent(srl, "", "  ")
-	_ = ioutil.WriteFile("surface_rates.json", file, 0644)
+	_ = ioutil.WriteFile("../uniswap-js/src/surface_rates.json", file, 0644)
 }
