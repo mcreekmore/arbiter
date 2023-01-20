@@ -23,6 +23,7 @@ export type Pool = {
   Token0: Token
   Token1: Token
   TotalValueLockedETH: number
+  FeeTier: number
 }
 
 export type Token = {
@@ -30,4 +31,10 @@ export type Token = {
   Name: string
   Symbol: string
   Decimals: number
+}
+
+export type QuotedDepth = {
+  SurfaceRate: SurfaceRate
+  ProfitLoss: number
+  ProfitLossPercent: number
 }

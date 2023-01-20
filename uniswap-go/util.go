@@ -337,6 +337,10 @@ func parsePools(rp *[]RawPool) []Pool {
 		if err != nil {
 			fmt.Printf("The HTTP request failed with error %s\n", err)
 		}
+		ft, err := strconv.ParseInt(p.FeeTier, 10, 64)
+		if err != nil {
+			fmt.Printf("The HTTP request failed with error %s\n", err)
+		}
 
 		np := Pool{
 			Id:          p.Id,
@@ -355,6 +359,7 @@ func parsePools(rp *[]RawPool) []Pool {
 				Decimals: t1d,
 			},
 			TotalValueLockedETH: tvle,
+			FeeTier:             ft,
 		}
 
 		pp = append(pp, np)
@@ -384,6 +389,7 @@ func fetchPools(c int) []RawPool {
 				decimals
 			}
 			totalValueLockedETH
+			feeTier
 		}
 	}
 	`, c)

@@ -11,6 +11,25 @@ require('dotenv').config({ path: '../.env' })
 
 getDepth(1, 1)
 
+// calculate arbitrage
+function calculateArbitrage(
+  amountIn: number,
+  amountOut: number,
+  sr: SurfaceRate
+) {
+  let threshold = 0 // eventually add to config
+  let profitLoss = amountOut - amountIn
+  let profitLossPercent = 0
+
+  if (profitLoss > threshold) {
+    profitLossPercent = (profitLoss / amountIn) * 100
+    console.log(sr)
+    return profitLossPercent
+  }
+
+  return profitLossPercent
+}
+
 async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
   const poolContract = new ethers.Contract(
     pool.Id,
@@ -19,6 +38,7 @@ async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
   )
 
   const tokenFee = await poolContract.fee()
+  console.log(tokenFee)
   // const decimals
 
   let inputTokenA: Token
@@ -77,7 +97,7 @@ async function getDepth(amountIn: number, limit: number) {
 
   for (const sr of surfaceRates) {
     // trade 1
-    console.log('Checking trade 1 acquired coin...')
+    console.log('Checking new opportunity...')
     const acquiredCoinDetail1 = await getPrice(
       sr.Pool1,
       amountIn,
@@ -85,11 +105,11 @@ async function getDepth(amountIn: number, limit: number) {
     )
 
     if (acquiredCoinDetail1 === 0) {
+      console.log('error: acquired coin 1 = 0')
       return
     }
 
     // trade 2
-    console.log('Checking trade 2 acquired coin...')
     const acquiredCoinDetail2 = await getPrice(
       sr.Pool2,
       acquiredCoinDetail1,
@@ -97,18 +117,19 @@ async function getDepth(amountIn: number, limit: number) {
     )
 
     if (acquiredCoinDetail2 === 0) {
+      console.log('error: acquired coin 2 = 0')
       return
     }
 
     // trade 3
-    console.log('Checking trade 3 acquired coin...')
     const acquiredCoinDetail3 = await getPrice(
       sr.Pool3,
       acquiredCoinDetail2,
       sr.DirectionTrade3
     )
 
-    console.log(amountIn, acquiredCoinDetail3)
+    let result = calculateArbitrage(amountIn, acquiredCoinDetail3, sr)
+    console.log(result)
   }
 
   return
