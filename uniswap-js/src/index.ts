@@ -23,7 +23,7 @@ function calculateArbitrage(
 
   if (profitLoss > threshold) {
     profitLossPercent = (profitLoss / amountIn) * 100
-    console.log(sr)
+    // console.log(sr)
     return profitLossPercent
   }
 
@@ -31,14 +31,14 @@ function calculateArbitrage(
 }
 
 async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
-  const poolContract = new ethers.Contract(
-    pool.Id,
-    IUniswapV3PoolABI.abi,
-    provider
-  )
+  // const poolContract = new ethers.Contract(
+  //   pool.Id,
+  //   IUniswapV3PoolABI.abi,
+  //   provider
+  // )
 
-  const tokenFee = await poolContract.fee()
-  console.log(tokenFee)
+  // const tokenFee = await poolContract.fee()
+  // console.log(tokenFee)
   // const decimals
 
   let inputTokenA: Token
@@ -74,7 +74,7 @@ async function getPrice(pool: Pool, amountIn: number, tradeDirection: string) {
     let quotedAmountOut = await quoterContract.callStatic.quoteExactInputSingle(
       inputTokenA.Id,
       inputTokenB.Id,
-      tokenFee,
+      pool.FeeTier,
       amountInString,
       0
     )
