@@ -5,7 +5,6 @@ import {FlashLoanSimpleReceiverBase} from "@aave/core-v3/contracts/flashloan/bas
 import {IPoolAddressesProvider} from "@aave/core-v3/contracts/interfaces/IPoolAddressesProvider.sol";
 import {IERC20} from "@aave/core-v3/contracts/dependencies/openzeppelin/contracts/IERC20.sol";
 
-// import "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol";
 import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
 
 contract Arbiter is FlashLoanSimpleReceiverBase {
@@ -78,7 +77,7 @@ contract Arbiter is FlashLoanSimpleReceiverBase {
         address tokenIn,
         address tokenOut,
         uint24 poolFee
-    ) external returns (uint256 amountOut) {
+    ) internal returns (uint256 amountOut) {
         IERC20(tokenIn).approve(address(swapRouter), amountIn);
 
         ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
@@ -103,7 +102,7 @@ contract Arbiter is FlashLoanSimpleReceiverBase {
         address tokenIn,
         address tokenOut,
         uint24 poolFee
-    ) external returns (uint256 amountIn) {
+    ) internal returns (uint256 amountIn) {
         IERC20(tokenIn).approve(address(swapRouter), amountInMaximum);
 
         ISwapRouter.ExactOutputSingleParams memory params = ISwapRouter
