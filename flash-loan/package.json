@@ -6,6 +6,8 @@
   },
   "dependencies": {
     "@aave/core-v3": "^1.17.1",
+    "@uniswap/v3-core": "^1.0.1",
+    "@uniswap/v3-periphery": "^1.4.3",
     "dotenv": "^16.0.3"
   }
 }
