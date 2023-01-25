@@ -54,7 +54,7 @@ contract SingleSwap {
                 tokenIn: WETH,
                 tokenOut: USDC,
                 fee: poolFee,
-                recipient: address(this), // changes from msg.sender
+                recipient: address(this), // changed from msg.sender
                 deadline: block.timestamp,
                 amountIn: amountIn,
                 amountOutMinimum: 0,
@@ -87,7 +87,7 @@ contract SingleSwap {
                 tokenIn: WETH,
                 tokenOut: USDC,
                 fee: poolFee,
-                recipient: address(this), // changes from msg.sender
+                recipient: address(this), // changed from msg.sender
                 deadline: block.timestamp,
                 amountOut: amountOut,
                 amountInMaximum: amountInMaximum,
