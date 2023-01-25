@@ -7,6 +7,7 @@ type Pool struct {
 	Token0              Token
 	Token1              Token
 	TotalValueLockedETH float64
+	FeeTier             int64
 }
 
 type RawPool struct {
@@ -16,6 +17,7 @@ type RawPool struct {
 	Token0              RawToken
 	Token1              RawToken
 	TotalValueLockedETH string
+	FeeTier             string
 }
 
 type Token struct {

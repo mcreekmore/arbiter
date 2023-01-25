@@ -4,25 +4,27 @@ package main
 // go run *.go
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 )
 
 func main() {
 	fmt.Println("STARTING ARBITER...")
 
-	// fmt.Println("Connecting to mongo...")
-	// connectDB()
+	fmt.Println("Connecting to mongo...")
+	connectDB()
 
 	rawPools := fetchPools(100)
 
 	pools := parsePools(&rawPools)
 
-	triPools := structureTradingPairs(&pools)
+	stp := structureTradingPairs(&pools) // structured trading pairs
 
 	srl := []SurfaceRate{} // surface rates list
 
 	// calculate surface rates for triangular pair
-	for _, tp := range triPools {
+	for _, tp := range stp {
 		calcTokens(&tp)
 
 		// calculate surface rate for specific token
@@ -41,4 +43,7 @@ func main() {
 		fmt.Printf("Profit %v%%", sr.ProfitLossPercent)
 		fmt.Println()
 	}
+
+	file, _ := json.MarshalIndent(srl, "", "  ")
+	_ = ioutil.WriteFile("../uniswap-js/src/surface_rates.json", file, 0644)
 }

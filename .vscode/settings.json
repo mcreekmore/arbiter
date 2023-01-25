@@ -1,0 +1,4 @@
+{
+  "solidity.defaultCompiler": "remote",
+  "solidity.compileUsingLocalVersion": "/home/matt/code/arbiter/soljson-v0.8.10.js"
+}
