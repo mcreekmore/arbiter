@@ -128,9 +128,25 @@ async function getDepth(amountIn: number, limit: number) {
       sr.DirectionTrade3
     )
 
-    let result = calculateArbitrage(amountIn, acquiredCoinDetail3, sr)
-    console.log(result)
+    let profitLossPercent = calculateArbitrage(
+      amountIn,
+      acquiredCoinDetail3,
+      sr
+    )
+    if (profitLossPercent > 0) {
+      console.log(`Profit Loss: ${profitLossPercent}%`)
+      console.log(sr)
+
+      // EXECUUUUUUUUUUUUUUUUTTEEEEEEEEEEEEEE
+      let res = await executeArbiter(sr)
+    }
   }
 
   return
+}
+
+async function executeArbiter(sr: SurfaceRate) {
+  // TODO
+
+  return 0
 }
