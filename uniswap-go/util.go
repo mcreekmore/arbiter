@@ -5,11 +5,15 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 func calcSurfaceRateForToken(token1 string, tp TriPool, d string, msr float64, srl *[]SurfaceRate) {
@@ -362,7 +366,10 @@ func parsePools(rp *[]RawPool) []Pool {
 			FeeTier:             ft,
 		}
 
-		pp = append(pp, np)
+		// ignore if token prices are 0
+		if t0p != 0 || t1p != 0 {
+			pp = append(pp, np)
+		}
 	}
 
 	return pp
@@ -409,7 +416,18 @@ func query(q *string) []byte {
 	}
 
 	jsonValue, _ := json.Marshal(jsonData)
-	request, err := http.NewRequest("POST", "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3", bytes.NewBuffer(jsonValue))
+
+	/*
+		Read env variables
+	*/
+	err := godotenv.Load("../.env")
+	if err != nil {
+		log.Fatalf("Some error occured. Err: %s", err)
+	}
+
+	url := os.Getenv("UNISWAP_GRAPH_POLYGON")
+
+	request, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
 
 	if err != nil {
 		fmt.Printf("The HTTP request failed with error %s\n", err)

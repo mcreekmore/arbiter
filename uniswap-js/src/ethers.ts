@@ -6,5 +6,5 @@ dotenv.config()
 require('dotenv').config({ path: '../.env' })
 
 export const provider = new ethers.providers.JsonRpcProvider(
-  process.env.INFURA_ETHEREUM_MAINNET
+  process.env.INFURA_POLYGON_MAINNET! + process.env.INFURA_DEX_KEY!
 )

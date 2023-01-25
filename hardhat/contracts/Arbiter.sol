@@ -9,6 +9,8 @@ import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
 
 contract Arbiter is FlashLoanSimpleReceiverBase {
     address payable owner;
+    address[3] public triangularPair;
+    uint24[3] public poolFees;
     address public constant routerAddress =
         0xE592427A0AEce92De3Edee1F18E0157C05861564;
     ISwapRouter public immutable swapRouter = ISwapRouter(routerAddress);
@@ -26,21 +28,58 @@ contract Arbiter is FlashLoanSimpleReceiverBase {
         address initiator,
         bytes calldata params
     ) external override returns (bool) {
-        // we have borrowed funds
-        // custom logic
+        require(
+            asset == triangularPair[0],
+            "Asset and first triangular pair do not match"
+        );
 
+        // borrowed funds are available
+        // swap 1
+        swapExactInputSingle(
+            IERC20(triangularPair[0]).balanceOf(address(this)),
+            triangularPair[0],
+            triangularPair[1],
+            poolFees[0]
+        );
+
+        // swap 2
+        swapExactInputSingle(
+            IERC20(triangularPair[1]).balanceOf(address(this)),
+            triangularPair[1],
+            triangularPair[2],
+            poolFees[1]
+        );
+
+        // swap 3
+        swapExactInputSingle(
+            IERC20(triangularPair[2]).balanceOf(address(this)),
+            triangularPair[2],
+            triangularPair[0],
+            poolFees[2]
+        );
+
+        // pay back flash loan
         uint256 amountOwed = amount + premium;
         IERC20(asset).approve(address(POOL), amountOwed);
 
         return true;
     }
 
-    function requestFlashLoan(address _token, uint256 _amount) public {
+    function requestFlashLoan(
+        address _token,
+        uint256 _amount,
+        address[3] memory _triPair,
+        uint24[3] memory _poolFees
+    ) public {
         address receiverAddress = address(this);
         address asset = _token;
         uint256 amount = _amount;
         bytes memory params = "";
         uint16 referralCode = 0;
+
+        // set state variables
+        triangularPair = _triPair;
+        poolFees = _poolFees;
 
         POOL.flashLoanSimple(
             receiverAddress,
