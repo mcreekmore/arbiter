@@ -36,7 +36,7 @@ contract Arbiter is FlashLoanSimpleReceiverBase {
         // borrowed funds are available
         // swap 1
         swapExactInputSingle(
-            IERC20(triangularPair[0]).balanceOf(address(this)),
+            amount, // change back to IERC20(triangularPair[0]).balanceOf(address(this)) after testing
             triangularPair[0],
             triangularPair[1],
             poolFees[0]
